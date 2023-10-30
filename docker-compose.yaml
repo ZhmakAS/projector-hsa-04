@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+
+  worker:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      MEASUREMENT_ID: "G-TF8CGQYCNT"
+      API_SECRET: "MlACitK-R-iuCSstoeO_XQ"

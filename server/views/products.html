@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="/styles/product.css">
+    <title>{{ .Title }}</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TF8CGQYCNT"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TF8CGQYCNT');
+</script>
+
+<body>
+    <div class="h-100">
+        <div class="container mx-auto">
+            {{ range $key, $product := .Products }}
+            <div class="card mx-auto flex-row">
+                <div class="image-section">
+                    <img src="{{ $product.Image }}" class="product-image" alt="product-photo">
+                </div>
+                <div class="product-section">
+                    <h5 class="product-title">{{ $product.Title }}</h5>
+                    <p class="product-description">{{ $product.Description }}</p>
+                    <br>
+                    <p class="product-price">{{ $product.Price }}</p>
+                </div>
+            </div>
+            {{ end }}
+            <br>
+            <br>
+        </div>
+    </div>
+</body>
+
+</html>
